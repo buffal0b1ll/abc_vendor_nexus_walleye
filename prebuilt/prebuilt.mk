@@ -21,3 +21,8 @@ PRODUCT_PACKAGES += \
     LatinIMEGooglePrebuilt \
     AmbientSensePrebuilt \
     PrebuiltBugle
+
+PRODUCT_COPY_FILES += \
+    vendor/nexus/prebuilt/app/GoogleContacts/GoogleContacts.apk.prof:system/app/GoogleContacts/GoogleContacts.apk.prof \
+    vendor/nexus/prebuilt/app/PrebuiltDeskClockGoogle/PrebuiltDeskClockGoogle.apk.prof:system/app/PrebuiltDeskClockGoogle/PrebuiltDeskClockGoogle.apk.prof \
+    vendor/nexus/prebuilt/priv-app/GoogleDialer/GoogleDialer.apk.prof:system/priv-app/GoogleDialer/GoogleDialer.apk.prof

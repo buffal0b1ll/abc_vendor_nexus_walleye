@@ -25,6 +25,18 @@ LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := PrebuiltDeskClockGoogle.apk.prof
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := FAKE
+LOCAL_SRC_FILES := PrebuiltDeskClockGoogle/PrebuiltDeskClockGoogle.apk.prof
+include $(BUILD_SYSTEM)/base_rules.mk
+$(LOCAL_BUILT_MODULE): TARGET := $(LOCAL_SRC_FILES)
+$(LOCAL_BUILT_MODULE): SYMLINK := $(TARGET_OUT)/app/PrebuiltDeskClockGoogle/$(LOCAL_MODULE)
+$(LOCAL_BUILT_MODULE):
+	$(hide) echo "Copy: $(TARGET) -> $(SYMLINK)"
+	$(hide) cp $(TARGET) $(SYMLINK)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleContacts
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := GoogleContacts/GoogleContacts.apk
@@ -35,6 +47,18 @@ LOCAL_OVERRIDES_PACKAGES := \
     Contacts
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := GoogleContacts.apk.prof
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := FAKE
+LOCAL_SRC_FILES := GoogleContacts/GoogleContacts.apk.prof
+include $(BUILD_SYSTEM)/base_rules.mk
+$(LOCAL_BUILT_MODULE): TARGET := $(LOCAL_SRC_FILES)
+$(LOCAL_BUILT_MODULE): SYMLINK := $(TARGET_OUT)/app/GoogleContacts/$(LOCAL_MODULE)
+$(LOCAL_BUILT_MODULE):
+	$(hide) echo "Copy: $(TARGET) -> $(SYMLINK)"
+	$(hide) cp $(TARGET) $(SYMLINK)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := LatinIMEGooglePrebuilt
