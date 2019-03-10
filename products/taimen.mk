@@ -15,6 +15,10 @@
 # Include telephony configuration
 include vendor/nexus/configs/abc_phone.mk
 
+ifneq (,$(filter user,$(TARGET_BUILD_VARIANT)))
+	PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/security/releasekey
+endif
+
 # Inherit abc device configuration for taimen
 $(call inherit-product, device/google/taimen/abc.mk)
 
