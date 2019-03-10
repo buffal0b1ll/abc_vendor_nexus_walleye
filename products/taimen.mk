@@ -15,7 +15,7 @@
 # Include telephony configuration
 include vendor/nexus/configs/abc_phone.mk
 
-# Inherit abc device configuration for berkeley
+# Inherit abc device configuration for taimen
 $(call inherit-product, device/google/taimen/abc.mk)
 
 PRODUCT_NAME := taimen
