@@ -15,7 +15,11 @@
 # Include telephony configuration
 include vendor/nexus/configs/abc_phone.mk
 
-# Inherit abc device configuration for berkeley
+ifneq (,$(filter user,$(TARGET_BUILD_VARIANT)))
+	PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/security/releasekey
+endif
+
+# Inherit abc device configuration for walleye
 $(call inherit-product, device/google/walleye/abc.mk)
 
 PRODUCT_NAME := walleye
